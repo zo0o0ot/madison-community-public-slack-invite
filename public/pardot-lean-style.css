@@ -1,0 +1,832 @@
+/*
+    Stylesheet used for new templates - designed as per MW-101
+*/
+
+/* --------------------------------------------------------------
+    FORM STYLES
+----------------------------------------------------------------- */
+
+/* Border-box box model FTW! */
+#pardot-form,
+#pardot-form *,
+#pardot-form *:before,
+#pardot-form *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Override form margin and padding set in the default stylesheet. Inherit font and color from page. */
+#pardot-form {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+}
+
+/* Override form field wrapper margin and padding set in the default stylesheet. */
+#pardot-form .form-field,
+#pardot-form .submit {
+    margin: 15px 0 15px 0;
+    padding: 0;
+}
+
+/* Remove top margin from first from field wrapper. */
+#pardot-form .form-field:first-child {
+    margin-top: 0;
+}
+
+/* Set default input style. */
+#pardot-form input {
+    border: none;
+    border-radius: inherit;
+    box-sizing: border-box;
+    color: #2c3e50;
+    font-size: 14px;
+    padding: 7px 15px;
+    width: 100%;
+}
+
+/* When labels are not floated left, set width on text inputs, textareas, and selects to 100%. */
+#pardot-form input.text,
+#pardot-form input.date,
+#pardot-form textarea,
+#pardot-form select {
+    width: 100%;
+    font-family: inherit;
+    color: black;
+}
+
+/* When labels are floated left, set width on field labels to a percentage of available width. In browsers that support calc(), use static label width instead and the form field will consume the remaining width. */
+#pardot-form.label-left .field-label {
+    width: 35%;
+    width: calc(115px);
+}
+
+/* When labels are floated left, set width on text inputs, textareas, and selects to a percentage. In supported browsers, set width to 100% minus the width of the label instead. */
+#pardot-form.label-left input.text,
+#pardot-form.label-left input.date,
+#pardot-form.label-left textarea,
+#pardot-form.label-left select {
+    width: 65%;
+    width: calc(100% - 115px);
+}
+
+/* When labels are floated left, indent supporting form elements by the same amount as the field label. */
+#pardot-form.label-left span.value,
+#pardot-form.label-left .description,
+#pardot-form.label-left .no-label > *,
+#pardot-form.label-left .submit,
+#pardot-form.label-left .error.no-label {
+    margin-left: 35%;
+    margin-left: calc(115px);
+}
+
+/* Remove unnecessary left padding on required radio/checkbox field labels when label alignment is set to above and the required symbol is set to default in form styling options. */
+#pardot-form label.inline {
+    padding-left: 0;
+}
+
+/* Backup styles in case padding is added to text inputs. */
+#pardot-form input.date {
+    padding-left: 20px;
+    background-position: left center;
+}
+
+#pardot-form .submit input {
+    background-color: #337ab7;
+    color: #fff;
+}
+
+/* --------------------------------------------------------------
+    TEMPLATE DETAILS
+----------------------------------------------------------------- */
+
+/* Center the logo */
+.logo {
+    text-align: center;
+}
+
+/* Grey BG */
+.grey {
+    background-color: #eee;
+}
+
+/* Images do not extend containers */
+img {
+    max-width: 100%;
+}
+
+/* callout box */
+.callout-box {
+    background-color: #eee;
+    width: 100%;
+}
+
+.callout-box .inner {
+    padding: 15px;
+
+}
+
+/* Enable strong control over editable table cell widths */
+table.editable-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* Set default editable table cell spacing & widths */
+
+col td {
+    padding: 0 15px;
+    width: 33%;
+}
+
+
+col td {
+    padding: 0px 15px;
+    width: 50%;
+}
+
+/* --------------------------------------------------------------
+    SPACING
+----------------------------------------------------------------- */
+
+/* make element edge to edge */
+.flush {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* vertical padding */
+.vpadding {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* vertical alignment */
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+/* side padding only */
+.hpadding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* top padding only */
+.tpadding {
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+/* bottom padding only */
+.bpadding {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+/* --------------------------------------------------------------
+    SOCIAL
+----------------------------------------------------------------- */
+
+/* Social list spacing */
+.social-list {
+    padding-left: 0;
+}
+
+/* Social list display next to one another */
+.social-list li, .social-list {
+    display: inline;
+}
+
+/* Disable underlines on image link hover */
+.social-list a:hover {
+    text-decoration: none;
+}
+
+
+/* Share button image specific style */
+#share-buttons img {
+    width: 20px;
+    border: 0;
+    box-shadow: none;
+    display: inline;
+}
+
+/* --------------------------------------------------------------
+    RESPONSIVE
+----------------------------------------------------------------- */
+/* xs */
+@media (max-width: 767px) {
+    .pull-right {
+        float: none !important;
+        text-align: center;
+    }
+
+    .social {
+        text-align: center;
+    }
+
+    .cta {
+        padding-top: 20px;
+    }
+
+    .cta p {
+        margin-bottom: 0;
+    }
+
+    .jumbotron {
+        margin-bottom: 0;
+    }
+
+    .jumbogron p {
+        margin-bottom: 0;
+    }
+
+    .vcenter {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* sm */
+@media (max-width: 768px) {
+    #pardot-form.label-left .field-label {
+        width: 100%;
+        text-align: left;
+    }
+
+    #pardot-form.label-left input.text, #pardot-form.label-left input.date, #pardot-form.label-left textarea, #pardot-form.label-left select {
+        width: 100%;
+    }
+
+    #pardot-form.label-left span.value,
+    #pardot-form.label-left .description,
+    #pardot-form.label-left .no-label > *,
+    #pardot-form.label-left .submit,
+    #pardot-form.label-left .error.no-label {
+        width: 100%;
+    }
+
+    #pardot-form.label-left span.value, #pardot-form.label-left .description, #pardot-form.label-left .no-label > *, #pardot-form.label-left .submit, #pardot-form.label-left .error.no-label {
+        margin-left: 0;
+    }
+
+    form.form p {
+        margin-left: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    table.editable-table td {
+        display: block;
+        width: 100% !important;
+    }
+}
+
+/* md */
+@media (max-width: 992px) {
+
+}
+
+/* lg */
+@media (min-width: 1200px) {
+
+}
+body,
+html {
+    margin:0;
+    height:100%;
+}
+
+body {
+    font-family: acumin-pro, Helvetica, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0;
+    color: #fafafa;
+
+}
+
+/*
+    Download Form changes start here
+ */
+body:not(.non-gated) {
+    background-image: url(https://web.archive.org/web/20200829173407im_/https://fauna.com/assets/site/heroes/Fauna_website_HOME_hero_v2_opt.jpg);
+    background-color: #3642CE;
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*for non gated webinar page*/
+body.non-gated {
+    background-color: #F8F8F8;
+}
+
+body.non-gated .bg-wrapper {
+    background-image: url(https://web.archive.org/web/20200829173407im_/https://fauna.com/assets/site/heroes/Fauna_website_HOME_hero_v2_opt.jpg);
+    height: 851px;
+    top: -251px;
+    position: absolute;
+    left: -15px;
+    width: 100%;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 10px 15px 30px 15px;
+}
+
+.ngw-wrapper {
+    background-color: #ffffff;
+    color:black;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
+}
+#ngw-entry-content {
+    width:100%;
+    margin: auto;
+    max-width: 1110px;
+    padding: 100px;
+    padding-top: 20px;
+}
+
+#ngw-entry-content .title,
+#ngw-entry-content .description {
+    text-align: center;
+}
+#ngw-entry-content .title  {
+    /*padding-top: 60px;*/
+}
+#ngw-entry-content .description {
+    padding-bottom: 50px;
+}
+
+#ngw-entry-content .main-content {
+
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    /*padding-top: 25px;*/
+    height: 0;
+    margin-bottom: 40px;
+}
+#ngw-entry-content #form-wrapper {
+    width: 100%;
+    clear: both;
+    padding:40px;
+    margin-bottom: 40px;
+}
+
+#ngw-entry-content #pardot-form .field-wrapper {
+    display: inline-block;
+    width: 23.3%;
+    margin:20px 8px 20px 0;
+    vertical-align: text-top;
+}
+
+#ngw-entry-content #pardot-form .field-wrapper p {
+    margin-bottom: 4px;
+}
+
+#ngw-entry-content #pardot-form p.errors {
+    background: #8b0000;
+    color: #fff;
+    padding-left: 9px;
+    padding-bottom: 4px;
+    width: 209px;
+}
+
+#ngw-entry-content #pardot-form p.error.no-label {
+    color: #fff;
+    display:inline;
+}
+
+#ngw-entry-content #pardot-form .form-field  label,
+#ngw-entry-content #pardot-form .form-field  input{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#ngw-entry-content #form-wrapper .submit input {
+    width: 185px;
+    height: 50px;
+    float: right;
+    font-size: 16px;
+    line-height: normal;
+    text-align: center;
+    padding: 15px;
+    border-radius: 0;
+    color:#1C2251;
+}
+
+
+#ngw-entry-content .main-content iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body.non-gated footer.logo-footer .copy{
+    color:#1D2229;
+    padding-left: 10px;
+}
+
+
+body.download #text-parent-wrapper,
+body.download #form-wrapper {
+    margin: auto;
+    display: grid;
+    min-height: 638px;
+}
+
+body.whitepaper #text-parent-wrapper,
+body.whitepaper #form-wrapper {
+    margin: auto;
+    display: grid;
+    min-height: 575px;
+}
+
+body.contact #text-parent-wrapper,
+body.contact #form-wrapper {
+    margin: auto;
+    display: grid;
+    min-height: 575px;
+}
+
+
+
+header {
+    position: relative;
+}
+
+header .logo {
+    width: 150px;
+    margin: 20px 0;
+}
+
+body.whitepaper header .logo,
+body.request header .logo {
+    /* center align logo */
+    margin: 20px auto;
+}
+body.whitepaper header .vcenter,
+body.request header .vcenter {
+    display:block;
+}
+
+/* for mobile remove background */
+@media (max-width: 768px) {
+    body.whitepaper,
+    body.request {
+        background: #F4F5F9;
+    }
+    body.whitepaper #text-block,
+    body.request #text-block,
+    body.whitepaper #form-wrapper form p label  {
+        color: #000;
+    }
+    body.whitepaper header .logo img,
+    body.request  header .logo img {
+        background: url(https://web.archive.org/web/20200829173407im_/https://fauna.com/assets/pardot/img/Fauna_logo_blue.png) no-repeat;
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 120px;
+        height: 34px;
+        padding-left: 120px;
+        background-size: contain;
+    }
+
+    body.whitepaper  footer .copy,
+    body.request  footer .copy {
+        color: #000;
+    }
+    body.whitepaper  footer .logo img,
+    body.request  footer .logo img {
+        background-image: url(https://web.archive.org/web/20200829173407im_/https://fauna.com/assets/pardot/img/fauna-logo-black-bird.svg);
+        filter: brightness(0.1);
+
+    }
+
+}
+
+
+main.container {
+    max-width: 1085px;
+    margin: auto;
+    margin-bottom: 80px;
+}
+
+
+#text-parent-wrapper {
+    width: 55%;
+    background: #FFFFFF;
+    float: left;
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+#text-request-wrapper {
+    max-width: 660px;
+    padding: 80px 0;
+    background: #FFFFFF;
+    text-align: center;
+    margin:auto;
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+#text-request-wrapper #text-block {
+    max-width: 500px;
+}
+
+
+.cover-image {
+    margin: auto;
+    text-align: center;
+}
+
+#text-block {
+    color: #1D2229;
+    margin: auto;
+    padding-right: 70px;
+    padding-left: 70px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+#text-block h1 {
+    padding-bottom: 20px;
+}
+
+#text-block a {
+    color: #4273c9;
+}
+
+#text-block a:hover {
+    border-bottom: 1px solid #01e399;
+}
+
+#form-wrapper {
+    width: 45%;
+    float: right;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%), #3642CE;
+    background-blend-mode: overlay, normal;
+    padding: 60px 75px;
+    color: white;
+}
+
+
+.right-arrow {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #FFFFFF;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: 0;
+}
+
+#form-wrapper form p label {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+#form-wrapper form p.required label {
+    padding: 0;
+    background: none;
+}
+
+#form-wrapper form p:not(.checkbox-terms).required label:after {
+    padding-left: 5px;
+    content: '*';
+}
+
+#form-wrapper .checkbox-terms input[type="checkbox"] + label:before {
+    border: 1px solid #fff;
+    content: "\00a0";
+    display: inline-block;
+    height: 16px;
+    margin-right: 8px;
+    padding: 0;
+    vertical-align: middle;
+    width: 16px;
+}
+
+#form-wrapper .checkbox-terms input[type="checkbox"]:checked + label:before {
+
+    color: #fff;
+    content: "\2713";
+    text-align: center;
+    line-height: 15px;
+}
+
+#form-wrapper .checkbox-terms input[type="checkbox"]:checked + label:after {
+
+}
+
+
+#form-wrapper .checkbox-terms input {
+    width: 15px;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+#form-wrapper form .checkbox-terms label {
+    width: calc(100% - 25px);
+    text-transform: none;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#form-wrapper form .checkbox-terms input {
+    display: none;
+}
+
+#form-wrapper .checkbox-terms a {
+    color: #fff;
+    font-weight: bold;
+}
+
+
+#form-wrapper .submit input,
+#text-request-wrapper a.btn {
+    border-radius: 5px;
+    border: 0;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: 0px;
+    background: #01e399;
+    color: #3642ce;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 20px;
+    margin:20px 0;
+}
+
+#text-request-wrapper a.btn {
+    width: 100%;
+}
+#form-wrapper .submit input:hover,
+#text-request-wrapper a:hover {
+    color: #3642ce;
+    background: #65fecc;
+}
+
+footer {
+    padding:10px;
+    display:flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+footer .copy {
+    padding-left: 16px;
+    color: white;
+}
+
+@media (max-width: 1000px) {
+    #text-block,
+    #form-wrapper {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 50%), #3642CE;
+        background-blend-mode: overlay, normal;
+        max-width: 600px;
+        margin: auto;
+    }
+
+    header .logo {
+        width: 150px;
+        margin: auto;
+        margin-top: 25px;
+    }
+
+    .cover-image {
+        display: none;
+    }
+
+    .vpadding {
+        padding: 0;
+        padding-bottom: 40px;
+    }
+
+    body.download #text-parent-wrapper,
+    body.download #form-wrapper,
+    body.whitepaper #text-parent-wrapper,
+    body.whitepaper #form-wrapper,
+    body.contact #text-parent-wrapper,
+    body.contact #form-wrapper {
+        padding: 20px;
+        background: none;
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+    }
+    #text-request-wrapper {
+        background: none;
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    #text-parent-wrapper {
+        padding: 20px;
+    }
+
+    .right-arrow {
+        display: none;
+    }
+
+    #text-block {
+        color: #fff;
+        padding: 0;
+        text-align: center;
+    }
+
+    #text-block a {
+        color: white;
+        font-weight: bold;
+    }
+
+    #text-parent-wrapper .vpadding,
+    #text-parent-wrapper,
+    #text-block h1 {
+        padding-top: 0;
+
+    }
+
+    body.download #form-wrapper,
+    body.whitepaper #form-wrapper,
+    body.contact #form-wrapper{
+        background: transparent;
+    }
+    #ngw-entry-content #pardot-form .field-wrapper {
+        max-width: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+    #ngw-entry-content #form-wrapper {
+        margin-bottom: 20px;
+    }
+
+
+
+}
+
+@media (max-width: 468px) {
+    #ngw-entry-content {
+        padding:20px;
+        padding-top: 40px;
+    }
+    #ngw-entry-content .main-content {
+        margin-bottom: 60px;
+    }
+    #ngw-entry-content .description {
+        padding-bottom: 40px;
+    }
+    #ngw-entry-content .title h3{
+        font-size: 25px;
+    }
+    #ngw-entry-content .description h1{
+        font-size: 20px;
+    }
+}
+/*
+     FILE ARCHIVED ON 17:34:07 Aug 29, 2020 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 05:18:21 Feb 19, 2023.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 166.988
+  exclusion.robots: 0.145
+  exclusion.robots.policy: 0.131
+  cdx.remote: 0.094
+  esindex: 0.011
+  LoadShardBlock: 139.517 (3)
+  PetaboxLoader3.datanode: 177.347 (4)
+  load_resource: 102.087
+  PetaboxLoader3.resolve: 25.192
+*/

@@ -1,5 +1,7 @@
 ## What this is
 
+This is an experiment on using netlify for a public slack inviter.
+
 this shows how to use netlify with just plain html js and css, together with netlify functions.
 
 ## How to use (1 click)
